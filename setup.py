@@ -12,5 +12,10 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires='',
-    entry_points={}
+    entry_points={
+        'sphinx.html_themes': [
+            'cakephp = cakephpsphinx',
+            'cakephp-epub = cakephpsphinx',
+        ]
+    }
 )
