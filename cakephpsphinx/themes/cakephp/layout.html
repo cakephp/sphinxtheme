@@ -217,13 +217,15 @@
                                 <div class="col-md-5 p0">
                                     <ul class="nav navbar-nav">
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">3.x <i class="fa fa-menu-en fa-chevron-down"></i></a>
+                                            {% for item in version_list if 'current' in item and item['current'] %}
+                                                <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item['name'] }} <i class="fa fa-menu-en fa-chevron-down"></i></a>
+                                            {% endfor %}
                                             <ul class="dropdown-menu">
-                                                <li><a href="https://book.cakephp.org/3.0/{{ short_lang }}">3.x Book</a></li>
-                                                <li><a href="https://book.cakephp.org/2.0/{{ short_lang }}">2.x Book</a></li>
-                                                <li><a href="https://book.cakephp.org/1.3/{{ short_lang }}/">1.3 Book</a></li>
-                                                <li><a href="https://book.cakephp.org/1.2/{{ short_lang }}/">1.2 Book</a></li>
-                                                <li><a href="https://book.cakephp.org/1.1/en">1.1 Book</a></li>
+                                                {% for item in version_list %}
+                                                    <li><a href="https://book.cakephp.org/{{ item['number'] }}/{{ short_lang }}">
+                                                        {{ item['title'] }}
+                                                    </a></li>
+                                                {% endfor %}
                                             </ul>
                                         </li>
                                     </ul>

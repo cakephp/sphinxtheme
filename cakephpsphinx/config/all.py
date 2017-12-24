@@ -14,7 +14,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.phpdomain',
     'cakephpsphinx.config.cakei18n',
-    'cakephpsphinx.config.cakebranch'
+    'cakephpsphinx.config.release_context'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -34,10 +34,15 @@ copyright = u'%d, Cake Software Foundation, Inc' % datetime.datetime.now().year
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-# The `version` and `release` are defined in the version specific branches.
+# The `version`, `version_name`, `release`, are `version_list` configrations are defined in the version specific branches.
 #
-# The marketing name for a major version. 1.x & 2.x don't have names.
-version_name = ''
+# - `version` Should contain the minor version number eg. '3.5'
+# - `release` Should contain the minor version number eg. '3.5'
+# - `version_name` Should contain the marketing name for 
+#    the release branch eg. 'Red Velvet'
+# - `version_list` should contain a list of other versions to be made
+#    available through the version picker in the top navigation.
+
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
