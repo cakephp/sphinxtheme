@@ -44,6 +44,13 @@ pip install -e .
 You should now be able to preview changes to your docs theme by rebuilding the
 documentation.
 
+## Publishing Releases
+
+1. Update `__version__` in setup.py
+2. Commit changes to `setup.py`
+3. Create a new tag
+4. Publish a wheel `python setup.py bdist_wheel upload`
+
 ## License
 
 [MIT License](LICENSE)
