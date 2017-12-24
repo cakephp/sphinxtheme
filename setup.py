@@ -16,6 +16,10 @@ setup(
         'sphinx.html_themes': [
             'cakephp = cakephpsphinx',
             'cakephp-epub = cakephpsphinx',
+        ],
+        'sphinx_themes': [
+            'cakephp = cakephpsphinx',
+            'cakephp-epub = cakephpsphinx',
         ]
     }
 )
