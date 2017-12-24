@@ -1,6 +1,21 @@
 # Global configuration information used across all the
 # translations of documentation.
+
+# -- Required Configuration --------------------------------------------------
+
+# The `version`, `version_name`, `release`, are `version_list`
+# configration values are defined in the version specific branches.
 #
+# - `branch` The branch the current code can be found in github. eg. '3.0'
+# - `version` Should contain the minor version number eg. '3.5'
+# - `release` Should contain the minor version number eg. '3.5'
+# - `version_name` Should contain the marketing name for
+#    the release branch eg. 'Red Velvet'
+# - `version_list` should contain a list of other versions to be made
+#    available through the version picker in the top navigation.
+# - `search_version` The search index prefix to use when querying
+#   https://search.cakephp.org
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -30,25 +45,6 @@ master_doc = 'contents'
 project = u'CakePHP Cookbook'
 copyright = u'%d, Cake Software Foundation, Inc' % datetime.datetime.now().year
 
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-#
-# The `version`, `version_name`, `release`, are `version_list` configrations are defined in the version specific branches.
-#
-# - `version` Should contain the minor version number eg. '3.5'
-# - `release` Should contain the minor version number eg. '3.5'
-# - `version_name` Should contain the marketing name for 
-#    the release branch eg. 'Red Velvet'
-# - `version_list` should contain a list of other versions to be made
-#    available through the version picker in the top navigation.
-
-
-# There are two options for replacing |today|: either, you set today to some
-# non-false value, then it is used:
-#today = ''
-# Else, today_fmt is used as the format for a strftime call.
-#today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

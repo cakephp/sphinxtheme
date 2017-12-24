@@ -35,7 +35,7 @@ App.Search = (function () {
   };
 
   function executeSearch(value, page) {
-    var query = {lang: window.lang, q: value, version: App.config.version};
+    var query = {lang: window.lang, q: value, version: window.search_version};
     if (page) {
       query.page = page;
     }

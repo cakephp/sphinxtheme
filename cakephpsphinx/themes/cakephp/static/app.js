@@ -4,8 +4,7 @@ if (/cakephp\.org/.test(document.domain)) {
 
 App = {};
 App.config = {
-  url: 'https://search.cakephp.org/search',
-  version: '3-0'
+  url: 'https://search.cakephp.org/search'
 };
 
 App.Book = (function() {
@@ -36,7 +35,7 @@ App.InlineSearch = (function () {
 
   // Send the query to search app and get results.
   var doSearch = function (value, syncResults, asyncResults) {
-    var query = {lang: window.lang, q: value, version: App.config.version};
+    var query = {lang: window.lang, q: value, version: window.search_version};
     var url = App.config.url + '?' + jQuery.param(query);
 
     lastValue = value;
