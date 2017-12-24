@@ -35,6 +35,9 @@ copyright = u'%d, Cake Software Foundation, Inc' % datetime.datetime.now().year
 # built documents.
 #
 # The `version` and `release` are defined in the version specific branches.
+#
+# The marketing name for a major version. 1.x & 2.x don't have names.
+version_name = ''
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
