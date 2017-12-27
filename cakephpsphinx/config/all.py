@@ -21,6 +21,8 @@
 
 # If your documentation needs a minimal Sphinx version, state it here.
 import datetime
+import os
+
 
 # Add any Sphinx extension module names here, as strings.
 # They can be extensions coming with Sphinx
@@ -187,7 +189,9 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = '../themes/cakephp/static/pdf-logo.png'
+latex_logo = os.path.dirname(__file__) + \
+    os.path.sep + \
+    '../themes/cakephp/static/pdf-logo.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
