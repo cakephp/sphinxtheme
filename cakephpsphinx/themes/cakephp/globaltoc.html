@@ -8,5 +8,8 @@
     :license: BSD, see LICENSE for details.
 #}
 <div id="sidebar-navigation" class="hidden-xs">
-	{{ toctree(maxdepth=3, titles_only=True) }}
+  {% if show_root_link %}
+    <a href="https://book.cakephp.org">&#x2039; Back to CakePHP Cookbook</a>
+  {% endif %}
+  {{ toctree(maxdepth=3, titles_only=True) }}
 </div>

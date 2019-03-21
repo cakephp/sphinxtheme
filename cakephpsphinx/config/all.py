@@ -15,6 +15,8 @@
 #    available through the version picker in the top navigation.
 # - `search_version` The search index prefix to use when querying
 #   https://search.cakephp.org
+# - `project` The project name to display in the header bar.
+# - `show_root_link` Whether or not to show a back to cookbook link
 
 
 # -- General configuration ---------------------------------------------------
