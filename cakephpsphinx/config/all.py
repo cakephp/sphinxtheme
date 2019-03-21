@@ -44,7 +44,7 @@ source_suffix = '.rst'
 master_doc = 'contents'
 
 # General information about the project.
-project = u'CakePHP Cookbook'
+project = u'CakePHP'
 copyright = u'%d, Cake Software Foundation, Inc' % datetime.datetime.now().year
 
 
