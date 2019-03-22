@@ -15,6 +15,8 @@
 #    available through the version picker in the top navigation.
 # - `search_version` The search index prefix to use when querying
 #   https://search.cakephp.org
+# - `project` The project name to display in the header bar.
+# - `show_root_link` Whether or not to show a back to cookbook link
 
 
 # -- General configuration ---------------------------------------------------
@@ -44,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'contents'
 
 # General information about the project.
-project = u'CakePHP Cookbook'
+project = u'CakePHP'
 copyright = u'%d, Cake Software Foundation, Inc' % datetime.datetime.now().year
 
 
