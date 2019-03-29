@@ -10,13 +10,17 @@
 # - `version` Should contain the minor version number eg. '3.5'
 # - `release` Should contain the minor version number eg. '3.5'
 # - `version_name` Should contain the marketing name for
-#    the release branch eg. 'Red Velvet'
+#   the release branch eg. 'Red Velvet'
 # - `version_list` should contain a list of other versions to be made
-#    available through the version picker in the top navigation.
+#   available through the version picker in the top navigation.
 # - `search_version` The search index prefix to use when querying
 #   https://search.cakephp.org
 # - `project` The project name to display in the header bar.
 # - `show_root_link` Whether or not to show a back to cookbook link
+# - `repository` The repository name. Defaults to cakephp/docs
+# - `source_path` The path to the documentation in the repository 
+#   ending in a /. Defaults to ''
+
 
 
 # -- General configuration ---------------------------------------------------
