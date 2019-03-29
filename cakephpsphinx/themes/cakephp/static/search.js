@@ -81,7 +81,15 @@ App.Search = (function () {
       $.each(results, function(index, item) {
         var li = $('<li></li>');
         var link = $('<a></a>');
-        link.attr('href', base + item.url);
+
+        // If the index contains a relative URL append the base path.
+        // The primary cookbook has this for historical reasons.
+        var url = item.url;
+        if (url[0] !== '/') {
+          url = base + url;
+        }
+
+        link.attr('href', url);
         if (item.title) {
           link.append('<strong>' + item.title + '</strong><br />');
         }
