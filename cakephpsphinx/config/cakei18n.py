@@ -36,7 +36,7 @@ def append_template_ctx(app, pagename, templatename, ctx, event_arg):
         else:
             folder = lang
         possible = '..' + SEP + folder +  SEP + path + ''.join(app.config.source_suffix)
-        full_path = os.path.realpath(os.path.join(os.getcwd(), possible))
+        full_path = os.path.realpath(os.path.join(app.srcdir, possible))
 
         return os.path.isfile(full_path)
 
