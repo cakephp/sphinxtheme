@@ -1,8 +1,8 @@
 """
-CakePHP Git branch extension.
+CakePHP theme extensions.
 
-A simple sphinx extension for adding
-the GitHub branch name of the docs' version.
+A simple sphinx extension that add branch and version
+context to sphinx configuration and template context.
 """
 
 
@@ -15,6 +15,7 @@ def setup(app):
     app.add_config_value('version_list', [], True)
     app.add_config_value('search_version', '', True)
     app.add_config_value('show_root_link', False, True)
+    app.add_config_value('is_prerelease', False, True)
 
 
 def append_template_ctx(app, pagename, templatename, ctx, event_arg):
@@ -25,3 +26,5 @@ def append_template_ctx(app, pagename, templatename, ctx, event_arg):
     ctx['version_name'] = app.config.version_name
     ctx['version_list'] = app.config.version_list
     ctx['search_version'] = app.config.search_version
+    ctx['search_version'] = app.config.search_version
+    ctx['is_prerelease'] = app.config.is_prerelease

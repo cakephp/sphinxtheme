@@ -20,6 +20,8 @@
 # - `repository` The repository name. Defaults to cakephp/docs
 # - `source_path` The path to the documentation in the repository 
 #   ending in a /. Defaults to ''
+# - `is_prerelease` Set to True if the current branch is for a 
+#   unstable or pre-release version of a plugin/cakephp.
 
 
 

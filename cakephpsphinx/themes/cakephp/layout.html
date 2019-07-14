@@ -245,6 +245,12 @@
                     <a href="http://book.cakephp.org">current stable release documentation</a> instead.
                 </p>
             {% endif %}
+            {% if is_prerelease %}
+                <p class="edge-warning">
+                    This document is for a development version, which can be significantly different
+                    from stable releases.
+                </p>
+            {% endif %}
         </section>
     </header>
 
