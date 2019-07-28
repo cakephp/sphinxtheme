@@ -22,6 +22,8 @@
 #   ending in a /. Defaults to ''
 # - `is_prerelease` Set to True if the current branch is for a 
 #   unstable or pre-release version of a plugin/cakephp.
+# - `hide_page_contents` A set of pages that don't show 'page contents'
+#   section. Default value is `('search', 'index', 'contents', '404')`
 
 
 
