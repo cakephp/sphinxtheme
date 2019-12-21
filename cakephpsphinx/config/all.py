@@ -223,7 +223,7 @@ latex_show_urls = 'footnote'
 latex_domain_indices = True
 
 
-preamb = ur'''
+preamb = r'''
 % Custom colors.
 \definecolor{ChapterColor}{RGB}{201,36,52}
 \definecolor{TitleColor}{RGB}{0,0,0}
