@@ -16,7 +16,7 @@
 {%- set short_lang = '%.2s'|format(language) -%}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="{{ language }}">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
     {{ metatags }}
@@ -199,7 +199,7 @@
                                                     {%- if lang == language -%}
                                                     {# Do nothing, we print the active one above #}
                                                     {%- elif has_lang(lang, pagename) -%}
-                                                    <a href="{{ lang_link(lang, pagename) }}">{{ '%.2s'|format(lang) }}</a>
+                                                    <a lang="{{ lang }}" href="{{ lang_link(lang, pagename) }}">{{ '%.2s'|format(lang) }}</a>
                                                     {%- else -%}
                                                     <span class="disabled">{{ '%.2s'|format(lang) }}</span>
                                                     {%- endif -%}
