@@ -60,6 +60,10 @@
     {%- if prev %}
     <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
     {%- endif %}
+
+    {% for item in version_list if 'current' in item and item['current'] %}
+    <link rel="canonical" href="https://book.cakephp.org/{{ item['number'] }}/{{ language }}/{{ pagename }}.html" />
+    {% endfor %}
 {%- endblock %}
 
     <script type="text/javascript">
