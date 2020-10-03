@@ -127,6 +127,14 @@
   cursor: pointer;
 }
 
+/* Banner container for cakefest promos */
+.banner-image {
+  background: #f0f0e8;
+  padding: 15px;
+  width: auto;
+  margin-bottom: 30px;
+}
+
 /* -- Page Contents -- */
 .page-contents {
   background: #eaeae7;
