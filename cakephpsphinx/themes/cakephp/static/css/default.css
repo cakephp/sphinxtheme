@@ -102,7 +102,7 @@
 }
 .offline-download ul,
 .offline-download p {
-  padding: 0 100px;
+  padding: 0 10px;
   margin-bottom: 5px;
   text-align: center;
 }
@@ -119,7 +119,7 @@
   font-size: 15px;
   display: inline-block;
   text-align: center;
-  margin: 25px 5px;
+  margin: 15px 5px;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
