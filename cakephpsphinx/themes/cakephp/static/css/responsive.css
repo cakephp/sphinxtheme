@@ -109,6 +109,10 @@
     float: none;
     margin-left: 0;
   }
+
+  .reference {
+    word-break: break-word;
+  }
 }
 
 /**
