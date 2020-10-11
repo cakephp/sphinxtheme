@@ -110,7 +110,8 @@
     margin-left: 0;
   }
 
-  .reference {
+  .reference,
+  .docutils {
     word-break: break-word;
   }
 }
