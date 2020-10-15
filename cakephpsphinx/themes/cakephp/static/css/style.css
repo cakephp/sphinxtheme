@@ -2266,3 +2266,7 @@ header {
   font-family: "Roboto Mono", sans-serif;
   font-size: 11px !important;
 }
+
+video {
+  max-width: 100%;
+}
