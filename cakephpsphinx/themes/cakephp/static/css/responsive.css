@@ -114,6 +114,22 @@
   .docutils {
     word-break: break-word;
   }
+
+  h1 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
 
 /**
