@@ -1974,6 +1974,7 @@ header {
 
 .social iframe {
   text-align: center;
+  width: 96px;
 }
 
 .form-user input {
