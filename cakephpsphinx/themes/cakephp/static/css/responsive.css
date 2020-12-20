@@ -1,6 +1,13 @@
 /**
  * Phone/phablet layout.
  */
+@media (max-width: 375px) {
+  #wrap .twitter-typeahead {
+    width: 240px;
+    left: -190px;
+  }
+}
+
 @media (max-width: 767px) {
   .logo-cake img {
     margin-top: 20px;
