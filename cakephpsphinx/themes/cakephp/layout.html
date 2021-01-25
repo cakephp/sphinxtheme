@@ -21,7 +21,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
     {{ metatags }}
     <title>{{ title|striptags|e }} - {{ version }}</title>
-    <link href="{{ pathto('_static/favicon.png', 1) }}" type="image/png" rel="icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ pathto('_static/favicons/apple-touch-icon.png', 1) }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ pathto('_static/favicons/favicon-32x32.png', 1) }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ pathto('_static/favicons/favicon-16x16.png', 1) }}">
+    <link rel="manifest" href="{{ pathto('_static/favicons/manifest.json', 1) }}">
+    <link rel="manifest" href="{{ pathto('_static/favicons/favicon.ico', 1) }}">
+    <link rel="mask-icon" href="{{ pathto('_static/favicons/safari-pinned-tab.svg', 1) }}" color="#5bbad5">
+    <meta name="msapplication-config" content="{{ pathto('_static/favicons/browserconfig.xml', 1) }}" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-title" content="CakePHP - Cookbook">
+    <meta name="application-name" content="CakePHP - Cookbook">
 
     {{ css(css_files) }}
     {{ script(script_files) }}
