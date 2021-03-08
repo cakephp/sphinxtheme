@@ -210,6 +210,15 @@
   .social {
     margin-bottom: 44px;
   }
+
+  .row.col-p30 [class*="col-"].business-solution {
+    padding: 0 30px;
+  }
+
+  .row.col-p30 {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
