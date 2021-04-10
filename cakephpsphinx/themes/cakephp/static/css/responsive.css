@@ -348,4 +348,8 @@
   .offline-download a {
     margin: 25px 5px;
   }
+
+  .footer-wrapper .col-p30 .business-solution {
+    padding: 0 20px;
+  }
 }
