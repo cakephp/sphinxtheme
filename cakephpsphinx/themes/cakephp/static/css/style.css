@@ -709,6 +709,10 @@ iframe {
   margin: 14px 20px 0 0;
 }
 
+.megamenu .row:first-child [class*="col-"]:first-child {
+  margin-top: 30px;
+}
+
 /* Menu on Mobiles */
 
 @media (max-width: 767px) {
@@ -806,8 +810,7 @@ iframe {
     margin-bottom: 30px;
   }
 
-  .megamenu .row,
-  .megamenu .row:first-child [class*="col-"]:first-child {
+  .megamenu .row {
     margin-top: 0;
   }
 
