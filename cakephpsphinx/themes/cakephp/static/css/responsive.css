@@ -287,6 +287,11 @@
   position: relative;
   z-index: auto;
 }
+
+#modal .megamenu {
+  padding-top: 30px;
+}
+
 #modal .megamenu-list {
   padding-top: 5px;
 }
