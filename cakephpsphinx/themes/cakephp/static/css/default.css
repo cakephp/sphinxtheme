@@ -192,10 +192,11 @@
 }
 
 #sidebar-navigation > ul {
-  padding-left: 15px;
+  padding-left: 0;
   margin: 0;
 }
-#sidebar-navigation .caption {
+
+#sidebar-navigation > p {
   color: #363637;
   font-family: "Raleway", sans-serif;
   display: block;
