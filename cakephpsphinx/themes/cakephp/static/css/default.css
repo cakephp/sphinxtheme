@@ -196,6 +196,7 @@
   margin: 0;
 }
 
+#sidebar-navigation .caption,
 #sidebar-navigation > p {
   color: #363637;
   font-family: "Raleway", sans-serif;
