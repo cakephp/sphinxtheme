@@ -55,7 +55,7 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'CakePHP'
-copyright = u' Cake Software Foundation, Inc' % datetime.datetime.now().year
+copyright = u'%s Cake Software Foundation, Inc' % datetime.datetime.now().year
 
 
 # List of patterns, relative to source directory, that match files and
