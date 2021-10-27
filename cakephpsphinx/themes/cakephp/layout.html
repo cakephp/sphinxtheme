@@ -1,6 +1,6 @@
 {%- macro script(script_files) %}
     {%- for scriptfile in script_files %}
-    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    <script src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endfor %}
 {%- endmacro %}
 
@@ -34,7 +34,10 @@
     <meta name="application-name" content="CakePHP - Cookbook">
 
     {{ css(css_files) }}
+
+    {%- block scripts %}
     {{ script(script_files) }}
+    {%- endblock %}
 
     {% for lang in languages %}
         {%- if lang != language -%}
@@ -76,7 +79,7 @@
     {% endfor %}
 {%- endblock %}
 
-    <script type="text/javascript">
+    <script>
     window.lang = "{{ short_lang }}";
     window.search_version = "{{ search_version }}";
     </script>
@@ -253,7 +256,7 @@
             </div>
             {% if 'next' in version %}
                 <p class="edge-warning">
-                    This document is for CakePHP's development version, which can be significantly different 
+                    This document is for CakePHP's development version, which can be significantly different
                     from previous releases.
                     <br>You may want to read
                     <a href="http://book.cakephp.org">current stable release documentation</a> instead.
@@ -483,7 +486,7 @@
 {# End of div[id=wrapper] #}
 </div>
 
-<script type="text/javascript">
+<script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-743287-3']);
     _gaq.push(['_trackPageview']);
