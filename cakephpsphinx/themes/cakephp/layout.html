@@ -34,7 +34,10 @@
     <meta name="application-name" content="CakePHP - Cookbook">
 
     {{ css(css_files) }}
+
+    {%- block scripts %}
     {{ script(script_files) }}
+    {%- endblock %}
 
     {% for lang in languages %}
         {%- if lang != language -%}
@@ -253,7 +256,7 @@
             </div>
             {% if 'next' in version %}
                 <p class="edge-warning">
-                    This document is for CakePHP's development version, which can be significantly different 
+                    This document is for CakePHP's development version, which can be significantly different
                     from previous releases.
                     <br>You may want to read
                     <a href="http://book.cakephp.org">current stable release documentation</a> instead.
