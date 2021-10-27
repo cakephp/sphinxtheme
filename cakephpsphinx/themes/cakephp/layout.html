@@ -1,6 +1,6 @@
 {%- macro script(script_files) %}
     {%- for scriptfile in script_files %}
-    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    <script src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endfor %}
 {%- endmacro %}
 
@@ -79,7 +79,7 @@
     {% endfor %}
 {%- endblock %}
 
-    <script type="text/javascript">
+    <script>
     window.lang = "{{ short_lang }}";
     window.search_version = "{{ search_version }}";
     </script>
@@ -486,7 +486,7 @@
 {# End of div[id=wrapper] #}
 </div>
 
-<script type="text/javascript">
+<script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-743287-3']);
     _gaq.push(['_trackPageview']);
