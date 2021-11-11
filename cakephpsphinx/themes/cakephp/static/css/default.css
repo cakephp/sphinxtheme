@@ -688,6 +688,7 @@ dt tt {
   font-size: 14px;
 }
 
+.outdated-warning,
 .edge-warning {
   font-size: 1em;
   line-height: 1.5em;

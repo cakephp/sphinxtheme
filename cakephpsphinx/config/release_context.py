@@ -16,6 +16,7 @@ def setup(app):
     app.add_config_value('search_version', '', True)
     app.add_config_value('show_root_link', False, True)
     app.add_config_value('is_prerelease', False, True)
+    app.add_config_value('is_eol', False, True)
     app.add_config_value(
         'hide_page_contents',
         ('search', 'contents', 'index', '404'),
@@ -31,4 +32,5 @@ def append_template_ctx(app, pagename, templatename, ctx, event_arg):
     ctx['version_list'] = app.config.version_list
     ctx['search_version'] = app.config.search_version
     ctx['is_prerelease'] = app.config.is_prerelease
+    ctx['is_eol'] = app.config.is_eol
     ctx['hide_page_contents'] = app.config.hide_page_contents
