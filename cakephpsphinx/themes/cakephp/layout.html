@@ -269,7 +269,7 @@
                 </p>
             {% endif %}
             {% if is_eol %}
-              <p class="outdated-warning">
+              <p class="edge-warning">
                   This document is for a version of CakePHP that is no longer supported. Please upgrade to a newer release!
               </p>
             {% endif %}
@@ -308,7 +308,7 @@
 {% endblock -%}
 
 {%- block content %}
-<div class="container page-container {% if 'next' in version %}is-next{% endif %}">
+<div class="container page-container {% if 'next' in version or is_eol or is_prerelease %}is-next{% endif %}">
 
     {%- if pagename != 'search' -%}
     <div id="improve-slideout">
