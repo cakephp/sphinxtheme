@@ -30,6 +30,5 @@ def append_template_ctx(app, pagename, templatename, ctx, event_arg):
     ctx['version_name'] = app.config.version_name
     ctx['version_list'] = app.config.version_list
     ctx['search_version'] = app.config.search_version
-    ctx['search_version'] = app.config.search_version
     ctx['is_prerelease'] = app.config.is_prerelease
     ctx['hide_page_contents'] = app.config.hide_page_contents
