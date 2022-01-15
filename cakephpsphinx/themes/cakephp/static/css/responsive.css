@@ -23,7 +23,6 @@
     top: -21px;
   }
 
-  .icon-social,
   .icon-irc,
   .icon-social-q {
     margin-bottom: 30px;
@@ -79,7 +78,7 @@
   }
 
   .social {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .social iframe {
@@ -206,9 +205,6 @@
   }
   #back-to-contents {
     bottom: 0;
-  }
-  .social {
-    margin-bottom: 44px;
   }
 
   .row.col-p30 [class*="col-"].business-solution {
@@ -356,5 +352,11 @@
 
   .footer-wrapper .col-p30 .business-solution {
     padding: 0 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .social {
+    margin-bottom: 20px;
   }
 }
