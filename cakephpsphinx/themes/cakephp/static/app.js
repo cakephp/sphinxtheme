@@ -104,7 +104,9 @@ App.InlineSearch = (function () {
 
     // update the input preview so it doesn't contain a blob of JSON.
     input.on('typeahead:cursorchange', function(event, suggestion) {
-      input.parents('.twitter-typeahead').find('.tt-input').val(suggestion.title);
+      if (suggestion) {
+        input.parents('.twitter-typeahead').find('.tt-input').val(suggestion.title);
+      }
     });
   };
 
