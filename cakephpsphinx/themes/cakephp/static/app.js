@@ -46,6 +46,14 @@ App.InlineSearch = (function () {
       type: 'GET'
     });
     xhr.done(function (response) {
+      jQuery.map(response.data, function(item) {
+        // If the index contains a relative URL append the base path.
+        // The primary cookbook has this for historical reasons.
+        if (item.url[0] !== '/') {
+          item.url = base + item.url;
+        }
+        return item;
+      });
       asyncResults(response.data);
     });
   };
@@ -65,14 +73,7 @@ App.InlineSearch = (function () {
           suggestion: function(item) {
             var div = $('<div></div>');
             var link = $('<a></a>');
-
-            // If the index contains a relative URL append the base path.
-            // The primary cookbook has this for historical reasons.
-            var url = item.url;
-            if (url[0] !== '/') {
-              url = base + url;
-            }
-            link.attr('href', url);
+            link.attr('href', item.url);
             if (item.title) {
               link.append('<strong>' + item.title + '</strong><br />');
             }
@@ -98,13 +99,15 @@ App.InlineSearch = (function () {
     // 'click' the link.
     input.on('typeahead:select', function(event, suggestion) {
       input.typeahead('val', suggestion.title);
-      window.location = base + suggestion.url;
+      window.location = suggestion.url;
       return false;
     });
 
     // update the input preview so it doesn't contain a blob of JSON.
     input.on('typeahead:cursorchange', function(event, suggestion) {
-      input.parents('.twitter-typeahead').find('.tt-input').val(suggestion.title);
+      if (suggestion) {
+        input.parents('.twitter-typeahead').find('.tt-input').val(suggestion.title);
+      }
     });
   };
 
