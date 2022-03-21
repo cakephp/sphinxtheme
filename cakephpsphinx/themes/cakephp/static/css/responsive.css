@@ -85,12 +85,35 @@
 /**
  * Phone/phablet layout.
  */
-/*@media (max-width: 375px) {
+@media (max-width: 374px) {
   #wrap .search {
-    width: 240px;
-    left: -190px;
+    width: 260px;
+    left: -200px;
   }
-}*/
+
+  #wrap input[type=search] {
+    left: 200px;
+  }
+  #wrap input[type=search]:focus {
+    left: 0;
+    width: 260px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  #wrap .search {
+    left: -210px; /* 60px less than width so icon is in box */
+    width: 270px;
+  }
+
+  #wrap input[type=search] {
+    left: 210px;
+  }
+  #wrap input[type=search]:focus {
+    left: 0;
+    width: 270px;
+  }
+}
 
 @media (max-width: 767px) {
   .logo-cake img {
@@ -114,23 +137,6 @@
 
   .submenu {
     background-color: #d33c44;
-  }
-
-  #wrap .search {
-    left: -210px; /* 60px less than width so icon is in box */
-    width: 270px;
-  }
-
-  /*.tt-menu .tt-suggestion {
-    padding-left: 15px;
-  }*/
-
-  #wrap input[type=search] {
-    left: 210px;
-  }
-  #wrap input[type=search]:focus {
-    left: 0;
-    width: 270px;
   }
 
   #wrap input[type="submit"] {
