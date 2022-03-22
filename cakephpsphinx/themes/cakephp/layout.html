@@ -11,8 +11,8 @@
 {%- endmacro %}
 
 {# The files that make these builds are defined in Makefile #}
-{%- set css_files = ['_static/css/app.css'] -%}
-{%- set script_files = ['_static/app.js'] -%}
+{%- set css_files = ['_static/css/dist.css'] -%}
+{%- set script_files = ['_static/js/dist.js'] -%}
 {%- set short_lang = '%.2s'|format(language) -%}
 
 <!DOCTYPE html>
@@ -78,11 +78,6 @@
     <link rel="canonical" href="https://book.cakephp.org/{{ item['number'] }}/{{ language }}/{{ pagename }}.html" />
     {% endfor %}
 {%- endblock %}
-
-    <script>
-    window.lang = "{{ short_lang }}";
-    window.search_version = "{{ search_version }}";
-    </script>
   </head>
   <body>
 
@@ -153,7 +148,7 @@
                         </button>
                     </div>
                     <div id="wrap">
-                        <form class="search" action="{{ pathto('search') }}" method="get">
+                        <form class="search" action="{{ pathto('search') }}" method="get" autocomplete="off">
                             <input name="q" type="search" placeholder="What are you looking for?">
                             <input id="search_submit" value="{{ _('Search') }}" type="submit">
                         </form>
@@ -495,6 +490,16 @@
 
 {# End of div[id=wrapper] #}
 </div>
+
+<script>
+    App.init({
+        lang: '{{ short_lang }}',
+        version: '{{ search_version }}',
+        search: {
+            url: '{{ search_url }}'
+        }
+    });
+</script>
 
 <script>
     var _gaq = _gaq || [];

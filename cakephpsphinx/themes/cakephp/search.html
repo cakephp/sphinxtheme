@@ -1,10 +1,6 @@
 {% extends "layout.html" %}
 
 {% set title = _('Search') %}
-{%- block scripts %}
-    {{ super() }}
-    <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
-{%- endblock %}
 
 {% block body %}
   <h1 id="search-documentation">{{ _('Search') }}</h1>
@@ -16,29 +12,19 @@
   </p>
   </div>
 
-  <p>
-    {% trans %}From here you can search these documents. Enter your search
-    words into the box below and click "search". Note that the search
-    function will automatically search for all of the words. Pages
-    containing fewer words won't appear in the result list.{% endtrans %}
-  </p>
-
-  <div class="row">
-      <form action="" method="get" class="standalone-search col-md-10 col-md-push-1">
-        <input type="hidden" name="lang" value="{{ language }}" />
-        <div class="col-md-10 col-sm-10">
-            <input type="search" autocomplete="off" class="search-input" name="q" value="" title="search" />
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <button type="submit" aria-label="{{ _('search') }}">
-                <span class="glyph_range icon-submenu icon-submenu-cook">A</span>
-            </button>
-        </div>
-      </form>
-    </div>
-  <div class="row" id="search-results">
-    <ul>
-    </ul>
+  <div id="standalone-search">
+    <form class="row row-no-gutters" action="" method="get">
+      <input type="hidden" name="lang" value="en" />
+      <div class="col-xs-11">
+        <input type="search" autocomplete="off" class="input" name="q" value="" />
+      </div>
+      <div class="col-xs-1 text-right">
+        <button type="submit" aria-label="{{ _('Search') }}">
+          <span class="glyph_range icon-submenu icon-submenu-cook">A</span>
+        </button>
+      </div>
+    </form>
+    <div class="results"></div>
+    <div class="pagination"></div>
   </div>
-  <div id="search-pagination"></div>
 {% endblock %}
