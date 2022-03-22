@@ -84,11 +84,6 @@ App.Search = (function () {
     };
 
     /**
-     * @type string
-     */
-    var base;
-
-    /**
      * @param {string} query
      * @param {Object} [params]
      * @returns {Promise}
@@ -109,26 +104,11 @@ App.Search = (function () {
 
         var url = _config.url + '?' + $.param(params);
 
-        return $
-            .ajax({
-                url: url,
-                dataType: 'json',
-                type: 'GET'
-            })
-            .then(function (response) {
-                $.map(response.data, function (item) {
-                    // If the index contains a relative URL, append the base path.
-                    // The primary cookbook has this for historical reasons.
-                    if (item.url[0] !== '/') {
-                        item.url = base + item.url;
-                    }
-                    item.modified = true;
-
-                    return item;
-                });
-
-                return response;
-            });
+        return $.ajax({
+            url: url,
+            dataType: 'json',
+            type: 'GET'
+        });
     }
 
     /**
@@ -144,10 +124,6 @@ App.Search = (function () {
      */
     function init(config) {
         _config = $.extend(true, _defaultConfig, config);
-
-        base = location.href
-            .replace(location.protocol + '//' + location.host, '')
-            .split('/').slice(0, 2).join('/') + '/';
     }
 
     return {
