@@ -3,6 +3,8 @@
  * @property {App~Search~searchCallback} search
  * @property {App~Search~validateQueryCallback} validateQuery
  * @property {App~Search~TemplatesConfig} templates
+ * @property {Function} [onResultsInteraction]
+ * @property {Function} [onDeactivate]
  */
 
 /**
@@ -42,6 +44,7 @@ App.InlineSearch = (function () {
                 $results.append(_config.templates.instructions());
             }
             $results.show();
+            adjustResultsMaxHeight();
         }
 
         function hideResults() {
@@ -124,6 +127,18 @@ App.InlineSearch = (function () {
             $input.val(query);
         }
 
+        function triggerOnResultsInteraction() {
+            if (_config.onResultsInteraction) {
+                _config.onResultsInteraction();
+            }
+        }
+
+        function triggerOnDeactivate() {
+            if (_config.onDeactivate) {
+                _config.onDeactivate();
+            }
+        }
+
         $input.on('input', function () {
             clearResults();
             showResults();
@@ -181,6 +196,7 @@ App.InlineSearch = (function () {
                         } else {
                             setResultCursor(currentResultsStackIndex);
                             showResults();
+                            triggerOnResultsInteraction();
                         }
                     }
                     break;
@@ -193,6 +209,7 @@ App.InlineSearch = (function () {
                         } else {
                             setResultCursor(currentResultsStackIndex);
                             showResults();
+                            triggerOnResultsInteraction();
                         }
                     }
                     break;
@@ -215,10 +232,15 @@ App.InlineSearch = (function () {
             event.preventDefault();
         });
 
+        $results.on('mouseover', '.result', function () {
+            triggerOnResultsInteraction();
+        });
+
         $input.on('blur', function () {
             hideResults();
             resetResultCursor();
             resetInput();
+            triggerOnDeactivate();
         });
 
         $input.on('focus', function () {
