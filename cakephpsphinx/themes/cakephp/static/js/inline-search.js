@@ -33,10 +33,24 @@ App.InlineSearch = (function () {
         var resultsVisible = false;
         var query;
 
+        var $window = $(window);
         var $input = $(input);
 
         var $results = $('<div class="inline-search results"></div>');
         $input.parent().append($results);
+
+        /**
+         * This could be done purely in CSS, but mobile browsers still
+         * don't have their stuff together, their top/bottom bars still
+         * mess up what 100vh means.
+         */
+        function adjustResultsMaxHeight() {
+            var vh = $window.innerHeight();
+            var top = $results.offset().top;
+            var margin = 10;
+
+            $results.css('max-height', (vh - top - margin) + 'px');
+        }
 
         function showResults() {
             resultsVisible = true;
@@ -246,6 +260,8 @@ App.InlineSearch = (function () {
         $input.on('focus', function () {
             showResults();
         });
+
+        $window.on('resize', adjustResultsMaxHeight);
 
         hideResults();
     }
