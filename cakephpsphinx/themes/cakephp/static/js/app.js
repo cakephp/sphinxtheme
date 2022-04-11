@@ -124,6 +124,14 @@ App = (function ($) {
     };
 
     /**
+     * @param {string} query
+     */
+    function onSearchCompleted(query) {
+        var gaq = _gaq || [];
+        gaq.push(['_trackEvent', 'Search', 'Search in ' + _config.version + '/' + _config.lang, query]);
+    }
+
+    /**
      * @param {App~Config} config
      */
     function init(config) {
@@ -138,13 +146,37 @@ App = (function ($) {
         App.Header.init();
 
         App.Search.init(
-            $.extend(true, {lang: _config.lang, version: _config.version}, _config.search)
+            $.extend(
+                true,
+                {
+                    lang: _config.lang,
+                    version: _config.version,
+                    onSearchCompleted: onSearchCompleted
+                },
+                _config.search
+            )
         );
 
         var searchConfig = {
             search: App.Search.search,
             validateQuery: App.Search.validateQuery,
-            templates: _config.search.templates
+            templates: _config.search.templates,
+
+            /**
+             * As it's pretty much impossible to tell what makes a "completed search",
+             * eg a search where the intended search terms have been entered completely,
+             * the trigger is being invoked in multiple different ways to cover a range
+             * of scenarios for a somewhat reasonable compromise.
+             *
+             * 1. Three seconds after a search has been executed.
+             * 2. When hovering or navigating the search results.
+             * 3. When the input field loses focus.
+             *
+             * In any case the `onSearchCompleted` callback will only be invoked once
+             * for every executed search query, no matter how often the trigger is invoked.
+             */
+            onResultsInteraction: App.Search.triggerOnSearchCompleted,
+            onDeactivate: App.Search.triggerOnSearchCompleted
         };
         App.InlineSearch.init(searchConfig);
         App.StandaloneSearch.init($.extend(true, searchConfig, _config.standaloneSearch));

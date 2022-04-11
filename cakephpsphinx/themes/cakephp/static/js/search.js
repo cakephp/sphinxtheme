@@ -6,6 +6,7 @@
  * @property {string} [highlightPreTag]
  * @property {string} [highlightPostTag]
  * @property {string} [encoder]
+ * @property {App~Search~onSearchCompletedCallback} [onSearchCompleted]
  */
 
 /**
@@ -19,6 +20,11 @@
  * @callback App~Search~validateQueryCallback
  * @param {string} query
  * @returns {boolean}
+ */
+
+/**
+ * @callback App~Search~onSearchCompletedCallback
+ * @param {string} query
  */
 
 /**
@@ -83,15 +89,40 @@ App.Search = (function () {
         encoder: 'html'
     };
 
+    var lastSearchedQuery;
+    var onSearchCompletedTriggerTimeout;
+
+    function clearLastSearchedQuery() {
+        lastSearchedQuery = null;
+        clearTimeout(onSearchCompletedTriggerTimeout);
+    }
+
+    function setLastSearchedQuery(query) {
+        lastSearchedQuery = query;
+
+        clearTimeout(onSearchCompletedTriggerTimeout);
+        onSearchCompletedTriggerTimeout = setTimeout(
+          function () {
+              triggerOnSearchCompleted();
+          },
+          3000
+        );
+    }
+
+    function triggerOnSearchCompleted() {
+        if (_config.onSearchCompleted && lastSearchedQuery) {
+            var query = lastSearchedQuery;
+            clearLastSearchedQuery();
+            _config.onSearchCompleted(query);
+        }
+    }
+
     /**
      * @param {string} query
      * @param {Object} [params]
      * @returns {Promise}
      */
     function search(query, params) {
-        if (!params) {
-            params = {};
-        }
         var defaultParams = {
             lang: _config.lang,
             version: _config.version,
@@ -100,15 +131,21 @@ App.Search = (function () {
             encoder: _config.encoder,
             q: query
         };
-        params = $.extend(defaultParams, params);
+        params = $.extend(defaultParams, params || {});
 
         var url = _config.url + '?' + $.param(params);
 
-        return $.ajax({
-            url: url,
-            dataType: 'json',
-            type: 'GET'
-        });
+        clearLastSearchedQuery();
+
+        return $
+            .ajax({
+                url: url,
+                dataType: 'json',
+                type: 'GET'
+            })
+            .always(function () {
+                setLastSearchedQuery(query);
+            });
     }
 
     /**
@@ -129,6 +166,7 @@ App.Search = (function () {
     return {
         init: init,
         search: search,
-        validateQuery: validateQuery
+        validateQuery: validateQuery,
+        triggerOnSearchCompleted: triggerOnSearchCompleted
     }
 })();

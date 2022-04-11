@@ -4,6 +4,8 @@
  * @property {App~Search~searchCallback} search
  * @property {App~Search~validateQueryCallback} validateQuery
  * @property {App~Search~TemplatesConfig} templates
+ * @property {Function} [onResultsInteraction]
+ * @property {Function} [onDeactivate]
  */
 
 App.StandaloneSearch = (function () {
@@ -15,6 +17,8 @@ App.StandaloneSearch = (function () {
      * @property {App~Search~searchCallback} search
      * @property {App~Search~validateQueryCallback} validateQuery
      * @property {App~Search~TemplatesConfig} templates
+     * @property {Function} [onResultsInteraction]
+     * @property {Function} [onDeactivate]
      */
     var _config = {};
 
@@ -85,6 +89,18 @@ App.StandaloneSearch = (function () {
     function setGenericErrorState() {
         clearResults();
         $status.append(_config.templates.error('generic'));
+    }
+
+    function triggerOnResultsInteraction() {
+        if (_config.onResultsInteraction) {
+            _config.onResultsInteraction();
+        }
+    }
+
+    function triggerOnDeactivate() {
+        if (_config.onDeactivate) {
+            _config.onDeactivate();
+        }
     }
 
     /**
@@ -181,8 +197,16 @@ App.StandaloneSearch = (function () {
 
         $pagination = $element.find('.pagination');
 
+        $results.on('mouseover focus', '.result', function () {
+            triggerOnResultsInteraction();
+        });
+
         $input.bind('input', function () {
             executeSearch($input.val(), 1);
+        });
+
+        $input.on('blur', function () {
+            triggerOnDeactivate();
         });
 
         $pagination.on('click', 'a', function (event) {
