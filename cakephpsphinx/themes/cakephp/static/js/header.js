@@ -16,9 +16,10 @@ App.Header = (function () {
             return;
         }
 
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight){
+        // If they scrolled down and are half-past the navbar, add class
+        // nav-up. This is necessary so that content isn't being hidden
+        // "behind" the navbar.
+        if (st > lastScrollTop && st > (navbarHeight / 2)){
             // Scroll Down
             $header.removeClass('nav-down').addClass('nav-up');
         } else if (st + $win.height() < $(document).height()) {
@@ -39,7 +40,7 @@ App.Header = (function () {
             didScroll = true;
         });
 
-        // Debounce the header toggling to ever 250ms
+        // Debounce the header toggling to every 250ms
         var toggleHeader = function () {
             if (didScroll) {
                 hasScrolled();
@@ -48,11 +49,6 @@ App.Header = (function () {
             setTimeout(toggleHeader, 250);
         };
         setTimeout(toggleHeader, 250);
-
-        // If we're directly linking to a section, hide the nav.
-        if (window.location.hash.length) {
-            $header.addClass('nav-up');
-        }
     }
 
     return {
