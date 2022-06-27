@@ -431,11 +431,6 @@
 }
 
 @media (min-width: 1200px) {
-  .offline-download ul,
-  .offline-download p {
-    padding: 0 100px;
-  }
-
   .offline-download a {
     margin: 25px 5px;
   }
