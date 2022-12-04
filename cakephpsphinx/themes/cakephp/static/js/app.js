@@ -127,8 +127,14 @@ App = (function ($) {
      * @param {string} query
      */
     function onSearchCompleted(query) {
-        var gaq = _gaq || [];
-        gaq.push(['_trackEvent', 'Search', 'Search in ' + _config.version + '/' + _config.lang, query]);
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event',
+            'category': 'Search',
+            'action': 'Search',
+            'label': 'Search in ' + _config.version + '/' + _config.lang,
+            'value': query
+        });
     }
 
     /**
