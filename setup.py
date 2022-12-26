@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__version__ = '0.1.55'
+__version__ = '0.1.56'
 
 setup(
     name='cakephpsphinx',
