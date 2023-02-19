@@ -55,12 +55,12 @@ documentation.
 
 If you prefer to stay within github universe and provide changes via pull requests, you can do
 ```bash
-#Go to target directory, where you will clone cakephp/docs and cakephp/sphinxtheme
+#Go to target directory, where you want clone cakephp/docs and cakephp/sphinxtheme into
 #In our case we do it in the users home directory 
 cd ~
 
 #Clone the docs (follow installation guidelines of cakephp/docs)
-git clone git@github.com:cakephp/docs cake_docs
+git clone git@github.com:cakephp/docs
 cd cake_docs
 
 #Note/recommendation: better work with your own fork of cakephp/docs  
@@ -68,7 +68,7 @@ cd cake_docs
 #Install sphinx and other requirements for cakephp/docs
 pip install -r requirments.txt
 
-This will install also cakespinx theme as python distrubition package in your /usr/local/lib/<python>/dist-packages/cakephpsphinx. We come in the later step back to it.
+This will install also cakespinx theme as python distribution package in your /usr/local/lib/<python>/dist-packages/cakephpsphinx. We come in the later step back to it.
 
 #Clone the cakephp sphinx theme
 cd ~
