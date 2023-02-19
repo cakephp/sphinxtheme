@@ -711,7 +711,7 @@ dt tt {
 }
 .field-list,
 .field-list strong {
-  font-size: 110%;
+  font-size: 12px;
   font-family: "Roboto Mono", "Consolas", "Monaco", monospace;
   color: #003d4c;
   font-weight: normal;
