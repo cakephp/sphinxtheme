@@ -63,7 +63,7 @@ cd ~
 git clone git@github.com:cakephp/docs cake_docs
 cd cake_docs
 
-Note/recommendation: better work with your own fork of cakephp/docs  
+#Note/recommendation: better work with your own fork of cakephp/docs  
 
 #Install sphinx and other requirements for cakephp/docs
 pip install -r requirments.txt
@@ -74,7 +74,7 @@ This will install also cakespinx theme as python distrubition package in your /u
 cd ~
 git clone git@github.com:cakephp/sphinxtheme
 
-Note/recommendation: better work with your own fork of cakephp/sphinxtheme
+#Note/recommendation: better work with your own fork of cakephp/sphinxtheme
 
 #Link clone of sphinxtheme with cakephp/docs
 cd /usr/local/lib/<pyhton>/dist-packages/cakephpsphinx/themes 
