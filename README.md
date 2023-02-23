@@ -51,6 +51,41 @@ documentation.
 3. Create a new tag
 4. Publish a wheel `python setup.py bdist_wheel upload`
 
+## Option 2 - Developing/Testing changes to this theme
+
+If you prefer to stay within github universe and provide changes via pull requests, you can do
+```bash
+# Go to target directory, where you want clone cakephp/docs and cakephp/sphinxtheme into
+# In our case we do it in the users home directory 
+cd ~
+
+# Clone the docs (follow installation guidelines of cakephp/docs)
+# Note/recommendation: better work with your own fork of cakephp/docs 
+
+git clone git@github.com:cakephp/docs
+cd cake_docs
+
+# Install sphinx and other requirements for cakephp/docs
+pip install -r requirements.txt
+```
+
+This will install also cakespinx theme as python distribution package in your /usr/local/lib/<python>/dist-packages/cakephpsphinx. 
+We come back to it in the later step.
+
+```bash
+# Clone the cakephp sphinx theme
+# Note/recommendation: better work with your own fork of cakephp/sphinxtheme
+cd ~
+git clone git@github.com:cakephp/sphinxtheme
+
+# Link clone of sphinxtheme with cakephp/docs
+cd /usr/local/lib/<pyhton>/dist-packages/cakephpsphinx/themes 
+ln -s ~/cakephpsphinx/themes themes
+```
+
+Now you can change the theme as well the cakephp docs.
+The build command (e.g. make html-en) in cakephp will use your theme files of your local cakephp/sphinxtheme repository. You can push your changes and create pull-requests for cakephp/docs and cakephp/sphinxtheme via github.
+
 ## License
 
 [MIT License](LICENSE)
