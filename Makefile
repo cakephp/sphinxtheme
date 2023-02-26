@@ -20,7 +20,7 @@ bump-version: guard-VERSION
 	git commit -m "Update version number to $(VERSION)"
 
 # Tag a release
-tag-release: guard-VERSION bump-version
+tag-release: guard-VERSION
 	@echo "Tagging $(VERSION) and publish tag"
 	git tag -s $(VERSION) -m "CakePHP Sphinx Theme $(VERSION)"
 	git push $(REMOTE)
