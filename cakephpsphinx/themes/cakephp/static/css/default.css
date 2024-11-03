@@ -44,8 +44,8 @@
   padding-top: 160px;
   padding-bottom: 40px;
 }
-.is-next.page-container {
-  padding-top: 200px;
+.page-container.is-next {
+  padding-top: 15px;
 }
 
 /* General button */
@@ -770,4 +770,10 @@ dt tt {
   background-color: #ffe4e4;
   padding: 0.4em;
   margin: 0;
+  margin-top: 122px;
+}
+@media(max-width: 767px) {
+  .edge-warning {
+    margin-top: 0px;
+  }
 }

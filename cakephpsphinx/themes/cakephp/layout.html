@@ -260,29 +260,6 @@
                     </div>
                 </div>
             </div>
-            {% if 'next' in version %}
-                <p class="edge-warning">
-                    This document is for CakePHP's development version, which can be significantly different
-                    from previous releases.
-                    <br>You may want to read
-                    <a href="https://book.cakephp.org">current stable release documentation</a> instead.
-                </p>
-            {% elif is_prerelease %}
-                <p class="edge-warning">
-                    This document is for a development version, which can be significantly different
-                    from stable releases.
-                </p>
-            {% endif %}
-            {% if is_security %}
-                <p class="edge-warning">
-                    This document is for a version of CakePHP that receives security updates only. Please upgrade to a newer release!
-                </p>
-            {% endif %}
-            {% if is_eol %}
-              <p class="edge-warning">
-                  This document is for a version of CakePHP that is no longer supported. Please upgrade to a newer release!
-              </p>
-            {% endif %}
         </section>
     </header>
 
@@ -318,6 +295,30 @@
 {% endblock -%}
 
 {%- block content %}
+  {% if 'next' in version %}
+      <p class="edge-warning">
+          This document is for CakePHP's development version, which can be significantly different
+          from previous releases.
+          <br>You may want to read
+          <a href="https://book.cakephp.org">current stable release documentation</a> instead.
+      </p>
+  {% elif is_prerelease %}
+      <p class="edge-warning">
+          This document is for a development version, which can be significantly different
+          from stable releases.
+      </p>
+  {% endif %}
+  {% if is_security %}
+      <p class="edge-warning">
+          This document is for a version of CakePHP that receives security updates only. Please upgrade to a newer release!
+      </p>
+  {% endif %}
+  {% if is_eol %}
+    <p class="edge-warning">
+        This document is for a version of CakePHP that is no longer supported. Please upgrade to a newer release!
+    </p>
+  {% endif %}
+
 <div class="container page-container {% if 'next' in version or is_eol or is_prerelease %}is-next{% endif %}">
 
     {%- if pagename != 'search' -%}
