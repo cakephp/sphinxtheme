@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   font-family: Raleway, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.05em;
   font-weight: 500;
@@ -51,7 +51,7 @@ h1 {
 }
 h2 {
   font-size: 32px;
-  line-height: 44px;
+  line-height: 40px;
 }
 h3,
 h4,

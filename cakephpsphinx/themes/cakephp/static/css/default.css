@@ -32,7 +32,6 @@
 .document-body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  font-size: 15px;
   letter-spacing: 0.02em;
 }
 
@@ -45,8 +44,8 @@
   padding-top: 160px;
   padding-bottom: 40px;
 }
-.is-next.page-container {
-  padding-top: 200px;
+.page-container.is-next {
+  padding-top: 15px;
 }
 
 /* General button */
@@ -152,7 +151,7 @@
   margin-bottom: 1.5em;
 }
 .page-contents li {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
 }
 .page-contents a {
@@ -175,7 +174,7 @@
   text-transform: capitalize;
   letter-spacing: 0.04em;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5em;
   margin: 5px 0;
 }
@@ -591,7 +590,7 @@ dl.const em,
 dl.staticmethod em {
   font-family: "Roboto Mono", "Consolas", "Monaco", monospace;
   color: #444;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
@@ -656,7 +655,7 @@ dt tt {
 .staticmethod .descclassname {
   font-family: "Roboto Mono", "Consolas", "Monaco", monospace;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
 }
 .descclassname {
   font-weight: normal;
@@ -771,4 +770,10 @@ dt tt {
   background-color: #ffe4e4;
   padding: 0.4em;
   margin: 0;
+  margin-top: 122px;
+}
+@media(max-width: 767px) {
+  .edge-warning {
+    margin-top: 0px;
+  }
 }
