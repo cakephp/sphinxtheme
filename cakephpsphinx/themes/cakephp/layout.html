@@ -246,9 +246,15 @@
                                             {% endfor %}
                                             <ul class="dropdown-menu">
                                                 {% for item in version_list %}
-                                                    <li><a href="https://book.cakephp.org/{{ item['number'] }}/{{ short_lang }}">
-                                                        {{ item['title'] }}
-                                                    </a></li>
+                                                <li>
+                                                    {%- if has_lang(language, pagename) -%}
+                                                    <a lang="{{ lang }}" href="{{ lang_link(language, pagename) }}">
+                                                        {%- else -%}
+                                                        <a href="https://book.cakephp.org/{{ item['number'] }}/{{ short_lang }}">
+                                                            {%- endif -%}
+                                                            {{ item['title'] }}
+                                                        </a>
+                                                </li>
                                                 {% endfor %}
                                             </ul>
                                         </li>
