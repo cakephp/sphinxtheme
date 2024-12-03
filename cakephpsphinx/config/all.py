@@ -24,7 +24,8 @@
 #   unstable or pre-release version of a plugin/cakephp.
 # - `hide_page_contents` A set of pages that don't show 'page contents'
 #   section. Default value is `('search', 'index', 'contents', '404')`
-
+# - `canonical_version` A project/version value that is used in rel=canonical
+#   link elements.
 
 
 # -- General configuration ---------------------------------------------------

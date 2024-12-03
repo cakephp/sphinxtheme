@@ -38,3 +38,4 @@ def append_template_ctx(app, pagename, templatename, ctx, event_arg):
     ctx['is_security'] = app.config.is_security
     ctx['is_eol'] = app.config.is_eol
     ctx['hide_page_contents'] = app.config.hide_page_contents
+    ctx['canonical_version'] = app.config.canonical_version
