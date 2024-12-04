@@ -319,7 +319,7 @@
     </p>
   {% endif %}
 
-<div class="container page-container {% if 'next' in version or is_eol or is_prerelease %}is-next{% endif %}">
+<div class="container page-container {% if 'next' in version or is_eol or is_prerelease or is_security %}is-next{% endif %}">
 
     {%- if pagename != 'search' -%}
     <div id="improve-slideout">
