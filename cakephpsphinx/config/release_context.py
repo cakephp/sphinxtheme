@@ -19,6 +19,7 @@ def setup(app):
     app.add_config_value('is_prerelease', False, True)
     app.add_config_value('is_security', False, True)
     app.add_config_value('is_eol', False, True)
+    app.add_config_value('canonical_version', "", True)
     app.add_config_value(
         'hide_page_contents',
         ('search', 'contents', 'index', '404'),
