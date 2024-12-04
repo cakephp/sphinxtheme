@@ -44,8 +44,8 @@
   padding-top: 160px;
   padding-bottom: 40px;
 }
-.page-container.is-next {
-  padding-top: 15px;
+.page-container.has-banner {
+  padding-top: 30px;
 }
 
 /* General button */
